@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Marca provisória para torneio 3x3</title>
+  <desc id="desc">Símbolo original com o texto 3 por 3.</desc>
+  <rect width="220" height="220" rx="10" fill="#d6ff45"/>
+  <path d="M17 54h186M17 166h186M110 17v186" stroke="#090a0c" stroke-width="4" opacity=".16"/>
+  <text x="110" y="132" fill="#090a0c" font-family="Arial Black, Arial, sans-serif" font-size="77" font-weight="900" text-anchor="middle" letter-spacing="-10">3×3</text>
+  <text x="110" y="181" fill="#090a0c" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="3">PLACEHOLDER</text>
+</svg>
