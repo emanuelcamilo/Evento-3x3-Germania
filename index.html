@@ -1,15 +1,215 @@
 <!doctype html>
-<html lang="pt-BR"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Basket Working — torneio de basquete.">
-<title>Basket Working</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css">
-</head><body><main>
-<section class="intro" id="intro" aria-labelledby="intro-title"><i class="texture" aria-hidden="true"></i><i class="court" aria-hidden="true"></i><i class="glow glow-a" aria-hidden="true"></i><i class="glow glow-b" aria-hidden="true"></i><div class="intro-content"><img class="intro-logo" src="assets/branding/basket-working-reference.jpg" alt="Basket Working"><h1 id="intro-title"><span>BEM-VINDO</span><span>AO TORNEIO</span></h1><button id="enter-event" type="button">Entrar no evento <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div><p class="hint">Clique ou pressione Enter para continuar</p></section>
-<div class="site-background" aria-hidden="true"><i></i></div>
-<div class="landing" id="landing" aria-hidden="true" inert>
-<section class="site-hero" id="inicio" aria-labelledby="hero-title" tabindex="-1"><div class="hero-wordmark" role="img" aria-label="Basket Working"><span>Basket</span><span>Working</span></div><h2 class="sr-only" id="hero-title">Início</h2></section>
-<section class="content-section info" id="informacoes" aria-labelledby="info-title"><div class="section-label"><span>01</span><h2 id="info-title">Informações do evento</h2></div><div class="placeholder" aria-label="Área reservada para informações futuras do evento"><i></i><i></i><i></i><i></i></div></section>
-<section class="content-section awards" id="premiacoes" aria-labelledby="awards-title"><div class="section-label"><span>02</span><h2 id="awards-title">Premiações</h2></div><div class="placeholder" aria-label="Área reservada para informações futuras sobre premiações"><i></i><i></i><i></i></div></section>
-<section class="content-section registration" id="inscricao" aria-labelledby="registration-title"><div class="section-label"><span>03</span><h2 id="registration-title">Inscrição de times</h2></div><div class="placeholder" aria-label="Área reservada para a futura inscrição de times"><i></i><i></i><i></i></div></section>
-<section class="content-section partners" id="parceiros" aria-labelledby="partners-title"><div class="section-label"><span>04</span><h2 id="partners-title">Patrocinadores</h2></div><div class="placeholder" aria-label="Área reservada para futuros patrocinadores"><i></i><i></i><i></i><i></i></div></section>
-<section class="content-section location" id="local" aria-labelledby="local-title"><div class="section-label"><span>05</span><h2 id="local-title">Local do evento</h2></div><div class="placeholder" aria-label="Área reservada para informações futuras do local"><i></i><i></i></div></section>
-</div></main><script src="assets/js/intro.js"></script></body></html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="BWK 3x3 — Basket Working." />
+    <title>BWK 3x3 | Basket Working</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <div class="intro__grid" aria-hidden="true"></div>
+        <div class="intro__court" aria-hidden="true"></div>
+        <div class="intro__glow intro__glow--left" aria-hidden="true"></div>
+        <div class="intro__glow intro__glow--right" aria-hidden="true"></div>
+        <div class="intro__content">
+          <img class="intro__logo" src="assets/branding/basket-working-reference.jpg" alt="Basket Working" />
+          <h1 class="intro__title" id="intro-title"><span>BEM-VINDO</span><span>AO TORNEIO</span></h1>
+          <button class="intro__button" id="enter-event" type="button">
+            Entrar no evento
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+          </button>
+        </div>
+        <p class="intro__hint">Clique ou pressione Enter para continuar</p>
+      </section>
+
+      <div class="site-background" aria-hidden="true"></div>
+
+      <div class="landing" id="landing" aria-hidden="true" inert>
+        <header class="site-header" aria-label="Navegação principal" aria-hidden="true" inert>
+          <div class="site-header__inner">
+              <a class="header__brand" href="#inicio" aria-label="Início — BWK 3x3">
+                <img src="assets/branding/basket-working-header-transparent.png" alt="">
+            </a>
+            <button class="header__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menu de navegação">
+              Menu <span aria-hidden="true"></span>
+            </button>
+            <nav class="header__nav" id="primary-navigation" aria-label="Seções do evento">
+              <a href="#informacoes">Informações</a>
+              <a href="#local">Local</a>
+              <a href="#premiacoes">Premiações</a>
+              <a href="#parceiros">Parceiros</a>
+              <a href="#sobre">Sobre</a>
+              <a class="header__cta" href="https://wa.me/5551936198737">Inscreva seu time aqui</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="hero" id="inicio" aria-labelledby="hero-title" tabindex="-1">
+          <div class="hero__panel">
+            <svg class="hero__court" viewBox="0 0 1200 620" fill="none" aria-hidden="true">
+              <path d="M28 53v514M28 53h1144M1172 53v514" />
+              <path d="M28 567h1144" stroke="#000" />
+              <path d="M600 53v514" />
+              <circle cx="600" cy="310" r="58" />
+              <path d="M28 85h52c200 0 300 85 300 225S280 535 80 535H28" />
+              <rect x="28" y="202" width="222" height="217" />
+              <path d="M250 202v217M250 250a60 60 0 0 1 0 120" />
+              <path d="M38 267v86" />
+              <circle cx="47" cy="310" r="9" />
+              <path d="M180 202v-26m-45 26v-26m-45 26v-26M180 419v26m-45-26v26m-45-26v26" />
+              <path d="M1172 85h-52c-200 0-300 85-300 225s100 225 300 225h52" />
+              <rect x="950" y="202" width="222" height="217" />
+              <path d="M950 202v217M950 250a60 60 0 0 0 0 120" />
+              <path d="M1162 267v86" />
+              <circle cx="1153" cy="310" r="9" />
+              <path d="M1020 202v-26m45 26v-26m45 26v-26M1020 419v26m45-26v26m45-26v26" />
+            </svg>
+            <div class="hero__content">
+              <div class="hero__wordmark" role="img" aria-label="Basket Working">
+                <span>Basket</span>
+                <span>Working</span>
+              </div>
+              <div class="hero__edition" aria-label="BWK 3x3, primeira edição">
+                <span>BWK 3x3</span>
+                <span>1ª edição</span>
+              </div>
+              <p class="hero__tagline">A nova cena do basquete gaúcho começa na quadra.</p>
+            </div>
+          </div>
+          <h2 class="sr-only" id="hero-title">BWK 3x3 — primeira edição</h2>
+        </section>
+
+        <section class="content-section info" id="informacoes" aria-labelledby="info-title">
+          <div class="section-heading"><span>01</span><h2 id="info-title">Informações do evento</h2></div>
+          <div class="info__layout">
+            <div class="info__content">
+              <p class="info__statement">Muito mais que um torneio. O ponto de encontro do basquete gaúcho para quem joga e faz acontecer.</p>
+              <a class="event-cta" href="https://wa.me/5551936198737" aria-describedby="registration-note">
+                Inscreva o seu time aqui <span class="event-cta__emoji" aria-hidden="true">🏀</span>
+              </a>
+            </div>
+            <dl class="info__details">
+              <div><dt>Data</dt><dd>27 de Setembro</dd></div>
+              <div><dt>Formato</dt><dd>Torneio de Basquete 3x3</dd></div>
+              <div><dt>Valor de inscrição</dt><dd>R$ 150,00 por equipe</dd></div>
+            </dl>
+          </div>
+          <p class="sr-only" id="registration-note">Abre uma conversa no WhatsApp do evento.</p>
+        </section>
+
+        <section class="content-section location" id="local" aria-labelledby="location-title">
+          <div class="section-heading"><span>02</span><h2 id="location-title">Local do evento</h2></div>
+          <div class="location__layout">
+            <div class="location__media">
+              <div class="location__image-slot">
+                <img src="assets/images/quadra-ilustrativa.png" alt="Imagem ilustrativa de uma quadra de basquete">
+              </div>
+              <p class="location__image-note">Imagem meramente ilustrativa*</p>
+            </div>
+            <p class="location__name">Quadra do Parque Germânia <span>(Porto Alegre - RS)</span></p>
+          </div>
+        </section>
+
+        <section class="content-section awards" id="premiacoes" aria-labelledby="awards-title">
+          <div class="section-heading"><span>03</span><h2 id="awards-title">Premiações</h2></div>
+          <div class="reserved reserved--awards" aria-label="Premiações do evento">
+            <article class="award-icon award-icon--first">
+              <div class="award-icon__image award-icon__image--champion">
+                <img class="award-icon__trophy" src="assets/images/icone-1-lugar-transparent.png" alt="Troféu do primeiro lugar">
+              </div>
+              <div class="award-icon__copy">
+                <h3>🏆 1º lugar <span>(Campeões)</span></h3>
+                <ul>
+                  <li>Troféu Oficial BWK 3x3 1ª Edição.</li>
+                  <li>Medalhas de Campeão.</li>
+                  <li>Kit Exclusivo Red Bull: Energia de sobra para comemorar o título (Packs de produto e itens da marca).</li>
+                  <li>Voucher Consumo 4Beer: Para fechar o evento com a resenha merecida.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="award-icon award-icon--second">
+              <div class="award-icon__image award-icon__image--medal">
+                <img src="assets/images/medalha-2-lugar.png" alt="Medalha oficial de prata do segundo lugar">
+              </div>
+              <div class="award-icon__copy">
+                <h3>🥈 2º lugar</h3>
+                <ul>
+                  <li>Medalha Oficial de Prata.</li>
+                  <li>Kits BWK Partners: Brindes e produtos exclusivos fornecidos pelas marcas parceiras do evento.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="award-icon award-icon--third">
+              <div class="award-icon__image award-icon__image--medal">
+                <img src="assets/images/medalha-3-lugar.png" alt="Medalha oficial de bronze do terceiro lugar">
+              </div>
+              <div class="award-icon__copy">
+                <h3>🥉 3º lugar</h3>
+                <ul>
+                  <li>Medalha Oficial de Bronze.</li>
+                  <li>Kits BWK Partners: Brindes e produtos exclusivos fornecidos pelas marcas parceiras do evento.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section partners" id="parceiros" aria-labelledby="partners-title">
+          <div class="section-heading"><span>04</span><h2 id="partners-title">Parceiros</h2></div>
+          <div class="reserved reserved--partners" aria-label="Parceiros do evento">
+            <div class="partner-logo"><img src="assets/images/partner-4beer-transparent.png" alt="Logo da 4Beer Chopp"></div>
+            <div class="partner-logo"><img src="assets/images/partner-red-bull-transparent.png" alt="Logo da Red Bull"></div>
+          </div>
+        </section>
+
+        <section class="content-section about" id="sobre" aria-labelledby="about-title">
+          <div class="section-heading"><span>05</span><h2 id="about-title">Sobre o evento</h2></div>
+          <p class="about__text">O BWK 3x3 nasceu para elevar o padrão do basquete amador em Porto Alegre. Mais do que um torneio, somos o ponto de encontro onde a intensidade do esporte se mistura com entretenimento de ponta. Reunimos atletas, marcas de peso e uma estrutura premium no Parque Germânia para criar uma experiência única de competição, música e networking. Monte seu time e faça parte da nova cena do basquete gaúcho.</p>
+        </section>
+
+        <footer class="site-footer" aria-label="Rodapé">
+          <div class="site-footer__main">
+            <div class="footer__brand">
+              <a href="#inicio" aria-label="Início — BWK 3x3">
+                <img src="assets/branding/basket-working-header-transparent.png" alt="">
+              </a>
+            </div>
+            <nav class="footer__nav" aria-label="Links úteis">
+              <a href="#informacoes">Informações</a>
+              <a href="#local">Local</a>
+              <a href="#premiacoes">Premiações</a>
+              <a href="#parceiros">Parceiros</a>
+              <a href="#sobre">Sobre</a>
+            </nav>
+            <div class="footer__actions">
+              <a class="header__cta footer__cta" href="https://wa.me/5551936198737">Inscreva seu time aqui</a>
+              <div class="footer__channels" aria-label="Canais oficiais">
+                <a class="footer__channel" href="https://www.instagram.com/basketworking/" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/icon-instagram.png" alt="">
+                  <span>Instagram</span>
+                </a>
+                <a class="footer__channel" href="https://wa.me/5551936198737" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/icon-whatsapp.png" alt="">
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="footer__legal">© 2026 BASKET WORKING — BWK 3x3 / 1ª EDIÇÃO</p>
+        </footer>
+        <a class="floating-whatsapp" href="https://wa.me/5551936198737" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+          <img src="assets/images/icon-whatsapp.png" alt="">
+          <span class="sr-only">WhatsApp</span>
+        </a>
+      </div>
+    </main>
+    <script src="assets/js/intro.js"></script>
+  </body>
+</html>
