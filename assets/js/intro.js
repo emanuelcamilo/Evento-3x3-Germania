@@ -5,6 +5,8 @@ const enterButton = document.querySelector('#enter-event');
 const siteHeader = document.querySelector('.site-header');
 const menuButton = document.querySelector('.header__toggle');
 const primaryNavigation = document.querySelector('#primary-navigation');
+const partnerCarousel = document.querySelector('.partners__carousel');
+const partnerLogos = partnerCarousel ? [...partnerCarousel.querySelectorAll('.partner-logo')] : [];
 let ticking = false;
 
 function setMenuState(isOpen) {
@@ -56,6 +58,19 @@ enterButton.addEventListener('click', enterEvent);
 menuButton.addEventListener('click', () => setMenuState(!siteHeader.classList.contains('is-menu-open')));
 primaryNavigation.addEventListener('click', (event) => {
   if (event.target.closest('a')) setMenuState(false);
+});
+partnerLogos.forEach((partner) => {
+  partner.addEventListener('click', () => {
+    const partnerToFeature = partner.classList.contains('is-featured')
+      ? partnerLogos.find((item) => item !== partner)
+      : partner;
+
+    partnerLogos.forEach((item) => {
+      const isFeatured = item === partnerToFeature;
+      item.classList.toggle('is-featured', isFeatured);
+      item.setAttribute('aria-pressed', String(isFeatured));
+    });
+  });
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && siteHeader.classList.contains('is-menu-open')) {
