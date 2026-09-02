@@ -2,12 +2,23 @@ const intro = document.querySelector('#intro');
 const landing = document.querySelector('#landing');
 const hero = document.querySelector('#inicio');
 const enterButton = document.querySelector('#enter-event');
+const welcomeTransition = document.querySelector('#welcome-transition');
 const siteHeader = document.querySelector('.site-header');
 const menuButton = document.querySelector('.header__toggle');
 const primaryNavigation = document.querySelector('#primary-navigation');
 const partnerCarousel = document.querySelector('.partners__carousel');
 const partnerLogos = partnerCarousel ? [...partnerCarousel.querySelectorAll('.partner-logo')] : [];
+const partnerNotes = [...document.querySelectorAll('.partner-note')];
+const INTRO_EXIT_DURATION = 500;
+const WELCOME_SCREEN_DURATION = 1000;
+const WELCOME_EXIT_DURATION = 900;
 let ticking = false;
+
+function resetToHero() {
+  document.documentElement.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  document.documentElement.style.removeProperty('scroll-behavior');
+}
 
 function setMenuState(isOpen) {
   siteHeader.classList.toggle('is-menu-open', isOpen);
@@ -45,14 +56,34 @@ function onScroll() {
 }
 
 function enterEvent() {
-  if (document.body.classList.contains('has-entered')) return;
+  if (document.body.classList.contains('has-entered') || document.body.classList.contains('is-intro-exiting') || document.body.classList.contains('is-transitioning')) return;
 
-  document.body.classList.add('has-entered');
+  resetToHero();
+  document.body.classList.add('is-intro-exiting');
   intro.setAttribute('aria-hidden', 'true');
-  landing.removeAttribute('aria-hidden');
-  landing.removeAttribute('inert');
-  updateScrollEffects();
-  window.setTimeout(() => hero.focus({ preventScroll: true }), 800);
+
+  window.setTimeout(() => {
+    document.body.classList.remove('is-intro-exiting');
+    document.body.classList.add('is-transitioning');
+    welcomeTransition.setAttribute('aria-hidden', 'false');
+    welcomeTransition.removeAttribute('inert');
+
+    window.setTimeout(() => {
+      document.body.classList.remove('is-transitioning');
+      document.body.classList.add('is-transition-exiting', 'has-entered');
+      landing.removeAttribute('aria-hidden');
+      landing.removeAttribute('inert');
+      resetToHero();
+      updateScrollEffects();
+
+      window.setTimeout(() => {
+        document.body.classList.remove('is-transition-exiting');
+        welcomeTransition.setAttribute('aria-hidden', 'true');
+        welcomeTransition.setAttribute('inert', '');
+        hero.focus({ preventScroll: true });
+      }, WELCOME_EXIT_DURATION);
+    }, WELCOME_SCREEN_DURATION);
+  }, INTRO_EXIT_DURATION);
 }
 
 enterButton.addEventListener('click', enterEvent);
@@ -60,17 +91,31 @@ menuButton.addEventListener('click', () => setMenuState(!siteHeader.classList.co
 primaryNavigation.addEventListener('click', (event) => {
   if (event.target.closest('a')) setMenuState(false);
 });
+function setFeaturedPartner(partnerToFeature) {
+  const featuredIndex = partnerLogos.indexOf(partnerToFeature);
+
+  partnerLogos.forEach((item, index) => {
+    const position = (index - featuredIndex + partnerLogos.length) % partnerLogos.length;
+    const isFeatured = position === 0;
+    item.classList.toggle('is-featured', isFeatured);
+    item.classList.toggle('is-next', position === 1);
+    item.classList.toggle('is-back', position > 1);
+    item.setAttribute('aria-pressed', String(isFeatured));
+  });
+
+  partnerNotes.forEach((note, index) => {
+    const isActive = index === featuredIndex;
+    note.classList.toggle('is-active', isActive);
+    note.setAttribute('aria-hidden', String(!isActive));
+  });
+}
+
 partnerLogos.forEach((partner) => {
   partner.addEventListener('click', () => {
-    const partnerToFeature = partner.classList.contains('is-featured')
-      ? partnerLogos.find((item) => item !== partner)
+    const nextPartner = partner.classList.contains('is-featured')
+      ? partnerLogos[(partnerLogos.indexOf(partner) + 1) % partnerLogos.length]
       : partner;
-
-    partnerLogos.forEach((item) => {
-      const isFeatured = item === partnerToFeature;
-      item.classList.toggle('is-featured', isFeatured);
-      item.setAttribute('aria-pressed', String(isFeatured));
-    });
+    setFeaturedPartner(nextPartner);
   });
 });
 document.addEventListener('keydown', (event) => {
@@ -81,3 +126,6 @@ document.addEventListener('keydown', (event) => {
 });
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('resize', updateScrollEffects);
+if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
+window.addEventListener('pageshow', resetToHero);
+resetToHero();

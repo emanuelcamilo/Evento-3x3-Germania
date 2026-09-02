@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="BWK 3x3 — Basket Working." />
-    <title>BWK 3x3 | Basket Working</title>
+    <link rel="icon" type="image/png" href="assets/branding/favicon-bwk-player.png" />
+    <title>Basket Working 3x3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -26,7 +27,16 @@
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
           </button>
         </div>
-        <p class="intro__hint">Clique ou pressione Enter para continuar</p>
+        <p class="intro__hint">Use o botão para entrar no evento</p>
+      </section>
+
+      <section class="welcome-transition" id="welcome-transition" aria-labelledby="welcome-transition-title" aria-hidden="true" inert>
+        <div class="welcome-transition__court" aria-hidden="true"></div>
+        <div class="welcome-transition__content">
+          <p class="welcome-transition__eyebrow">Seja muito bem-vindo</p>
+          <p class="welcome-transition__lead">ao evento da</p>
+          <h2 id="welcome-transition-title">Basket <span>Working</span></h2>
+        </div>
       </section>
 
       <div class="site-background" aria-hidden="true"></div>
@@ -90,7 +100,7 @@
           <div class="section-heading"><span>01</span><h2 id="info-title">Informações do evento</h2></div>
           <div class="info__layout">
             <div class="info__content">
-              <p class="info__statement">Muito mais que um torneio. O ponto de encontro do basquete gaúcho para quem joga e faz acontecer.</p>
+              <p class="info__statement">Sejam bem-vindos ao primeiro torneio de Basquete 3x3 da Basket Working, é com muito carinho que trazemos esse evento até vocês, com a ajuda de diversos colaboradores foi possível tornar esse evento realidade e com ele poderemos elevar o nível do Basquete de Porto Alegre juntos.<br><br>Nós da Basket Working desejamos um ótimo dia de evento para todos os participantes e que possamos aproveitar ao máximo do evento e desse esporte que nos movimenta.</p>
               <a class="event-cta" href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" aria-describedby="registration-note">
                 Inscreva o seu time aqui <span class="event-cta__emoji" aria-hidden="true">🏀</span>
               </a>
@@ -99,6 +109,8 @@
               <div><dt>Data</dt><dd>27 de Setembro</dd></div>
               <div><dt>Formato</dt><dd>Torneio de Basquete 3x3</dd></div>
               <div><dt>Valor de inscrição</dt><dd>R$ 150,00 por equipe</dd></div>
+              <div><dt>Equipes</dt><dd>24 Equipes<br>vagas limitadas!</dd></div>
+              <div><dt>Atletas</dt><dd>4 Atletas por equipe</dd></div>
             </dl>
           </div>
           <p class="sr-only" id="registration-note">Abre uma conversa no WhatsApp do evento.</p>
@@ -114,6 +126,14 @@
               <p class="location__image-note">Imagem meramente ilustrativa*</p>
             </div>
             <p class="location__name">Quadra do Parque Germânia <span>(Porto Alegre - RS)</span></p>
+          </div>
+          <div class="location__access">
+            <a class="location__address" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Juncal%2C%20Jardim%20Europa%2C%20Porto%20Alegre%20-%20RS%2C%2091340-010" target="_blank" rel="noopener noreferrer">
+              <span class="location__address-icon" aria-hidden="true">⌖</span>
+              <span><small>Endereço de acesso</small>Parque Germânia - Portão 6 - R. Juncal - Jardim Europa, Porto Alegre - RS, 91340-010</span>
+              <span class="location__address-arrow" aria-hidden="true">↗</span>
+            </a>
+            <p><strong>Entrada recomendada:</strong> os participantes podem acessar o Parque Germânia pelo Portão 6, na rua do endereço acima, para chegar à quadra com mais facilidade.</p>
           </div>
         </section>
 
@@ -176,9 +196,14 @@
           <div class="partners__layout">
             <div class="reserved reserved--partners partners__carousel" aria-label="Parceiros do evento">
               <button class="partner-logo is-featured" type="button" aria-label="Destacar 4Beer Chopp" aria-pressed="true"><img src="assets/images/partner-4beer-transparent.png" alt="Logo da 4Beer Chopp"></button>
-              <button class="partner-logo" type="button" aria-label="Destacar Red Bull" aria-pressed="false"><img src="assets/images/partner-red-bull-transparent.png" alt="Logo da Red Bull"></button>
+              <button class="partner-logo is-next" type="button" aria-label="Destacar Red Bull" aria-pressed="false"><img src="assets/images/partner-red-bull-transparent.png" alt="Logo da Red Bull"></button>
+              <button class="partner-logo is-back" type="button" aria-label="Destacar Traço Studio" aria-pressed="false"><img src="assets/images/partner-traco-studio.png" alt="Logo da Traço Studio"></button>
             </div>
-            <p class="partners__note">Os patrocinadores do evento irão contribuir com diversos brindes para os atletas que estarão competindo no dia do evento.</p>
+            <div class="partners__note" aria-live="polite">
+              <p class="partner-note is-active" aria-hidden="false">A 4Beer irá contribuir para o evento com diversos brindes e vouchers para os finalistas do evento.</p>
+              <p class="partner-note" aria-hidden="true">A Red Bull irá contribuir para o evento com diversos brindes e vouchers para os finalistas do evento.</p>
+              <p class="partner-note" aria-hidden="true">A Traço Studio contribuiu para o evento da Basket Working através da criação deste site.</p>
+            </div>
           </div>
         </section>
 
