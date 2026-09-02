@@ -19,12 +19,12 @@ function updateScrollEffects() {
   const pageHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
   const pageProgress = Math.min(window.scrollY / pageHeight, 1);
   const isMobileViewport = window.matchMedia('(max-width: 42rem)').matches;
-  const heroProgress = Math.min(window.scrollY / (window.innerHeight * (isMobileViewport ? .75 : .55)), 1);
+  const heroProgress = Math.min(window.scrollY / (window.innerHeight * (isMobileViewport ? .85 : .55)), 1);
   const root = document.documentElement.style;
 
   root.setProperty('--background-shift', `${28 + pageProgress * 38}%`);
-  root.setProperty('--hero-scale', (1 - heroProgress * (isMobileViewport ? .16 : .1)).toFixed(3));
-  root.setProperty('--hero-radius', `${Math.round(heroProgress * (isMobileViewport ? 56 : 40))}px`);
+  root.setProperty('--hero-scale', (1 - heroProgress * (isMobileViewport ? .2 : .1)).toFixed(3));
+  root.setProperty('--hero-radius', `${Math.round(heroProgress * (isMobileViewport ? 72 : 40))}px`);
 
   const headerProgress = Math.min(Math.max((window.scrollY - window.innerHeight * .62) / (window.innerHeight * .28), 0), 1);
   const isHeaderVisible = headerProgress > .02 && document.body.classList.contains('has-entered');

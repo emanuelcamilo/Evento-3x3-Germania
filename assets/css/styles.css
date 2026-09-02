@@ -190,10 +190,10 @@ body.has-entered .intro { clip-path: inset(0 0 100% 0); opacity: 0; filter: blur
   .intro__title { font-size: clamp(3.1rem, 16vw, 5rem); }
   .intro__court { width: 130vw; transform: perspective(45rem) rotateX(64deg) translateY(13rem); }
   .intro__hint { bottom: 1.25rem; }
-  .hero { height: 148svh; }
+  .hero { height: 170svh; }
   .hero__content { padding: 1.5rem; }
-  .hero__wordmark { font-size: clamp(5.5rem, 24vw, 8rem); }
-  .hero__court { width: auto; height: 108svh; max-width: none; }
+  .hero__wordmark { font-size: clamp(6rem, 26vw, 8.75rem); }
+  .hero__court { width: auto; height: 122svh; max-width: none; }
   .hero__edition { margin-top: 2.25rem; }
   .site-header { top: .7rem; width: calc(100% - 1.4rem); }
   .site-header__inner { min-height: 4.35rem; padding: .45rem .65rem .45rem .75rem; }
@@ -211,8 +211,9 @@ body.has-entered .intro { clip-path: inset(0 0 100% 0); opacity: 0; filter: blur
   .reserved--awards { grid-template-columns: 1fr; grid-template-rows: none; gap: 1rem; }
   .reserved--awards .award-icon { grid-column: auto; grid-row: auto; width: 100%; min-height: 0; }
   .reserved--awards .award-icon--mvp { grid-template-columns: 1fr; width: min(100%, 14rem); height: auto; justify-self: center; }
-  .partners__layout { grid-template-columns: 1fr; gap: 1.5rem; }
-  .reserved--partners.partners__carousel { width: min(100%, 18rem); height: clamp(16rem, 70vw, 21rem); margin: 0 auto; }
+  .content-section.partners { min-height: calc(100svh + 10rem); }
+  .partners__layout { grid-template-columns: 1fr; gap: 3.5rem; }
+  .reserved--partners.partners__carousel { width: min(100%, 18rem); height: clamp(18rem, 78vw, 23rem); margin: 0 auto; }
   .partner-logo { width: 100%; }
   .reserved { padding: .75rem; }
   .reserved--awards, .reserved--partners { padding: 0; }
