@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BWK 3x3 — 1a edicao do torneio de basquete 3x3 da Basket Working. 27 de setembro, Parque Germania, Porto Alegre. 24 vagas, R$ 150 por equipe.">
+<meta name="theme-color" content="#090F0D">
+<style>:root{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
 <title>BWK 3x3 Porto Alegre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -353,7 +363,9 @@ html.motion .btn:hover::after{ animation:sweep .7s var(--e); }
   font-family:var(--poster);
   font-weight:900;
   font-size:clamp(52px,12.4vw,176px);
-  line-height:.88;
+  /* .88 era apertado demais: o til de "CAMPEÃO" encostava na linha de cima.
+     Acentos em caixa-alta precisam de mais entrelinha que letras sem acento. */
+  line-height:.96;
   letter-spacing:-.028em;
   text-transform:uppercase;
   margin:0;
@@ -1048,7 +1060,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
   font-family:var(--poster);
   font-weight:900;
   font-size:clamp(46px,10.6vw,152px);
-  line-height:.88;
+  line-height:.94;
   letter-spacing:-.028em;
   text-transform:uppercase;
   margin:.16em 0 0;
@@ -1160,6 +1172,96 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
 .wa:hover{ transform:scale(1.09) translateY(-2px); }
 .wa svg{ width:27px; height:27px; fill:currentColor; }
 @media (max-width:760px){ .wa{ display:none; } }
+
+/* ========================================================================
+   AJUSTE DE CELULAR
+
+   O desenho usa muita tipografia miúda em mono com entreletra aberta —
+   ótimo num monitor, ilegível num telefone a um palmo do rosto. Este bloco
+   sobe o piso desses tamanhos e fecha um pouco a entreletra, que é o que
+   mais atrapalha a leitura quando o texto é pequeno.
+
+   Fica isolado num media query e no fim da folha de propósito: o desktop
+   continua exatamente como está.
+   ======================================================================== */
+@media (max-width:760px){
+
+  /* --- rótulos, créditos e etiquetas ---------------------------------- */
+  .credit{ font-size:12.5px; letter-spacing:.14em; }
+  .sticker{ font-size:12px; letter-spacing:.14em; padding:9px 14px; }
+  .btn-note{ font-size:12.5px; letter-spacing:.06em; line-height:1.5; }
+
+  /* --- ficha do hero: empilha em duas colunas em vez de fila irregular - */
+  .slug{ gap:11px clamp(16px,5vw,28px); padding:16px 0; }
+  .slug span{ font-size:12.5px; letter-spacing:.12em; }
+
+  /* --- placar regressivo --------------------------------------------- */
+  .clock__cap{ font-size:11.5px; letter-spacing:.16em; }
+  .clock__n{ font-size:32px; padding:12px 10px; }
+  .clock__l{ font-size:10.5px; letter-spacing:.12em; }
+
+  /* --- texto corrente ------------------------------------------------- */
+  .para{ font-size:15.5px; line-height:1.68; }
+  .voice{ font-size:20px; line-height:1.38; }
+
+  /* --- a conta -------------------------------------------------------- */
+  .conta__val{ font-size:78px; }
+  .tab{ font-size:14px; }
+  .tab div{ padding:13px 0; gap:12px; }
+
+  /* --- encarte do regulamento ----------------------------------------- */
+  .column{ font-size:15.5px; line-height:1.66; }
+  .laws li{ padding:18px 0; gap:10px 14px; }
+  .laws .n{ font-size:12px; }
+  .laws .t{ font-size:21px; }
+  .laws .d{ font-size:15px; line-height:1.55; }
+  .stamp{ font-size:13.5px; line-height:1.65; }
+
+  /* --- premiação ------------------------------------------------------ */
+  .prize{ gap:16px; }
+  .prize__pos{ font-size:12px; letter-spacing:.15em; }
+  .prize li{ font-size:15px; }
+  .prize__sub{ font-size:19px; }
+  .mvp__t h3{ font-size:22px; }
+
+  /* --- passos da inscrição -------------------------------------------- */
+  .step p{ font-size:15.5px; }
+
+  /* --- local ---------------------------------------------------------- */
+  .venue__rows dt{ font-size:12px; letter-spacing:.14em; }
+  .venue__rows p{ font-size:15.5px; }
+  .maplink{ font-size:12.5px; letter-spacing:.1em; }
+
+  /* --- parceiros: logos pequenos demais para reconhecer a marca ------- */
+  .pals__row{ gap:32px; }
+  .pal__logo{ height:58px; }
+  .pal__logo--mark{ height:66px; }
+  .pal p{ font-size:15px; line-height:1.6; }
+
+  /* --- dúvidas -------------------------------------------------------- */
+  .faq summary{ padding:20px 46px 20px 0; }
+  .faq__a{ font-size:15.5px; }
+
+  /* --- fecho e rodapé ------------------------------------------------- */
+  .draw{ gap:6px; }
+  .draw i{ width:27px; height:31px; font-size:10px; }
+  .foot__nav{ gap:14px 22px; }
+  .foot__nav a{ font-size:13px; letter-spacing:.1em; }
+  .foot__base{ font-size:11.5px; letter-spacing:.1em; line-height:1.7; }
+
+  /* --- barra fixa inferior -------------------------------------------- */
+  .dock__k{ font-size:10.5px; letter-spacing:.12em; }
+  .dock__v{ font-size:20px; }
+}
+
+/* Telas bem estreitas: o prêmio lado a lado com a imagem fica sem largura
+   útil para o texto, então a imagem sobe para cima do bloco. */
+@media (max-width:420px){
+  .prize{ grid-template-columns:1fr; gap:14px; }
+  .prize__img{ height:104px; }
+  .prize--1 .prize__img{ height:132px; }
+  .conta__val{ font-size:68px; }
+}
 
 /* Sem GSAP, sem JS ou com movimento reduzido, tudo permanece no lugar:
    as animações são todas gsap.from(), que partem para o estado de repouso. */
@@ -1863,3 +1965,6 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
   window.addEventListener('load', function(){ ST.refresh(); });
 })();
 </script>
+
+</body>
+</html>
