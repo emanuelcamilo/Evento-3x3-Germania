@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BWK 3x3 — 1a edicao do torneio de basquete 3x3 da Basket Working. 27 de setembro, Parque Germania, Porto Alegre. 24 vagas, R$ 150 por equipe.">
+<meta name="description" content="BWK 3x3 — 1a edicao do torneio de basquete 3x3 da Basket Working. 18 de outubro, Parque Germania, Porto Alegre. 24 vagas, R$ 150 por equipe.">
 <meta name="theme-color" content="#090F0D">
 <style>:root{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -1161,17 +1161,81 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
 .dock .btn{ padding:14px 17px; font-size:15px; flex:0 0 auto; }
 @media (max-width:760px){ .dock{ display:flex; } }
 
-.wa{
+/* Pilha flutuante: Instagram e WhatsApp. */
+.social{
   position:fixed; right:22px; bottom:22px; z-index:125;
-  width:54px; height:54px; border-radius:50%;
-  background:var(--aqua); color:#04120F;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 14px 36px -12px rgba(0,200,173,.9);
-  transition:transform .3s var(--e);
+  display:flex; flex-direction:column; gap:11px;
 }
-.wa:hover{ transform:scale(1.09) translateY(-2px); }
-.wa svg{ width:27px; height:27px; fill:currentColor; }
-@media (max-width:760px){ .wa{ display:none; } }
+.social__btn{
+  width:54px; height:54px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .3s var(--e), box-shadow .3s var(--e);
+}
+.social__btn svg{ width:26px; height:26px; fill:currentColor; }
+.social__btn:hover{ transform:scale(1.09) translateY(-2px); }
+
+.social__btn--wa{
+  background:var(--aqua); color:#04120F;
+  box-shadow:0 14px 36px -12px rgba(0,200,173,.9);
+}
+/* O Instagram entra em contorno para o WhatsApp seguir sendo a ação
+   principal: duas bolas cheias disputariam a mesma atenção. */
+.social__btn--ig{
+  background:rgba(9,15,13,.86);
+  color:var(--chalk);
+  border:1px solid var(--hair);
+}
+.social__btn--ig:hover{
+  color:var(--heat);
+  border-color:var(--heat);
+  box-shadow:0 14px 36px -14px rgba(255,94,26,.8);
+}
+@media (max-width:760px){ .social{ display:none; } }
+
+/* Bloco social do rodapé — onde o Instagram fica visível no celular,
+   já que a pilha flutuante sai de cena para não brigar com a barra fixa. */
+.foot__social{
+  margin-top:clamp(26px,4vw,38px);
+  padding-top:clamp(20px,3vw,28px);
+  border-top:1px solid var(--hair);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:14px clamp(20px,4vw,44px);
+}
+.social-link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:var(--chalk-dim);
+  transition:color .25s;
+}
+.social-link svg{
+  width:26px; height:26px;
+  fill:currentColor;
+  flex:0 0 auto;
+  color:var(--aqua);
+  transition:color .25s;
+}
+.social-link:hover{ color:var(--chalk); }
+.social-link:hover svg{ color:var(--heat); }
+.social-link span{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  font-family:var(--data);
+  font-size:11px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  line-height:1.4;
+}
+.social-link b{
+  font-family:var(--poster);
+  font-weight:800;
+  font-size:19px;
+  letter-spacing:.02em;
+  color:var(--chalk);
+  line-height:1;
+}
 
 /* ========================================================================
    AJUSTE DE CELULAR
@@ -1331,7 +1395,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
     <div class="hero__meta">
       <div class="hero__say">
         <p class="voice">
-          Dia <b>27 de setembro</b> a quadra do Parque Germânia vira arena.
+          Dia <b>18 de outubro</b> a quadra do Parque Germânia vira arena.
           Primeira edição do BWK 3x3 — e primeira edição só acontece uma vez.
           Quem levar o título sai com <span class="pix">R$ 1.000 no PIX</span>.
         </p>
@@ -1357,7 +1421,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
     </div>
 
     <div class="slug">
-      <span><b>27.09.2026</b></span>
+      <span><b>18.10.2026</b></span>
       <span>Parque Germânia &mdash; Porto Alegre/RS</span>
       <span>Formato <b>3x3</b> &middot; 4 atletas por equipe</span>
       <span>Inscrição <b>R$ 150</b> por equipe</span>
@@ -1371,7 +1435,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
 <div class="mq" data-mq data-dur="28" aria-hidden="true">
   <div class="mq__track">
     <div class="mq__set">
-      <span class="mq__i">27.09.2026 <span class="mq__b"></span></span>
+      <span class="mq__i">18.10.2026 <span class="mq__b"></span></span>
       <span class="mq__i">Parque Germânia <span class="mq__b"></span></span>
       <span class="mq__i"><b>R$ 1.000 no PIX</b> <span class="mq__b"></span></span>
       <span class="mq__i">24 times <span class="mq__b"></span></span>
@@ -1379,7 +1443,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
       <span class="mq__i"><i>Porto Alegre</i> <span class="mq__b"></span></span>
     </div>
     <div class="mq__set">
-      <span class="mq__i">27.09.2026 <span class="mq__b"></span></span>
+      <span class="mq__i">18.10.2026 <span class="mq__b"></span></span>
       <span class="mq__i">Parque Germânia <span class="mq__b"></span></span>
       <span class="mq__i"><b>R$ 1.000 no PIX</b> <span class="mq__b"></span></span>
       <span class="mq__i">24 times <span class="mq__b"></span></span>
@@ -1705,7 +1769,7 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
         Garantir a vaga do meu time
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
       </a>
-      <p class="btn-note" style="margin:0">27 de setembro &middot; Parque Germânia &middot; <b>R$ 150 por equipe</b></p>
+      <p class="btn-note" style="margin:0">18 de outubro &middot; Parque Germânia &middot; <b>R$ 150 por equipe</b></p>
     </div>
   </div>
 </section>
@@ -1726,24 +1790,36 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
         <a href="#duvidas">Dúvidas</a>
       </nav>
     </div>
+    <div class="foot__social">
+      <a class="social-link" href="https://www.instagram.com/basketworking/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+        <span><b>@basketworking</b>acompanha a organização no Instagram</span>
+      </a>
+      <a class="social-link" href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.19 4.23-9.41 9.43-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42M20.4 3.6A11.34 11.34 0 0 0 12.04 0C5.76 0 .65 5.11.64 11.39c0 2.01.53 3.96 1.53 5.69L.54 24l7.09-1.86a11.36 11.36 0 0 0 5.44 1.38h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.34-8.05"/></svg>
+        <span><b>WhatsApp do evento</b>inscrição, regulamento e avisos</span>
+      </a>
+    </div>
+
     <div class="foot__base">
       <span>&copy; 2026 Basket Working &mdash; BWK 3x3 &middot; 1&ordf; edição</span>
-      <span>
-        <a href="https://www.instagram.com/basketworking/" target="_blank" rel="noopener">Instagram</a>
-        &nbsp;&middot;&nbsp;
-        <a href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" target="_blank" rel="noopener">WhatsApp</a>
-      </span>
+      <span>18 de outubro de 2026 &middot; Porto Alegre &mdash; RS</span>
     </div>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" target="_blank" rel="noopener" aria-label="Falar no WhatsApp para inscrever o time">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.19 4.23-9.41 9.43-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42M20.4 3.6A11.34 11.34 0 0 0 12.04 0C5.76 0 .65 5.11.64 11.39c0 2.01.53 3.96 1.53 5.69L.54 24l7.09-1.86a11.36 11.36 0 0 0 5.44 1.38h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.34-8.05"/></svg>
-</a>
+<div class="social">
+  <a class="social__btn social__btn--ig" href="https://www.instagram.com/basketworking/" target="_blank" rel="noopener" aria-label="Instagram da Basket Working">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+  </a>
+  <a class="social__btn social__btn--wa" href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" target="_blank" rel="noopener" aria-label="Falar no WhatsApp para inscrever o time">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.19 4.23-9.41 9.43-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42M20.4 3.6A11.34 11.34 0 0 0 12.04 0C5.76 0 .65 5.11.64 11.39c0 2.01.53 3.96 1.53 5.69L.54 24l7.09-1.86a11.36 11.36 0 0 0 5.44 1.38h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.34-8.05"/></svg>
+  </a>
+</div>
 
 <div class="dock" id="dock">
   <div class="dock__i">
-    <span class="dock__k">27 set &middot; Parque Germânia</span>
+    <span class="dock__k">18 out &middot; Parque Germânia</span>
     <span class="dock__v">24 vagas &middot; R$ 150</span>
   </div>
   <a class="btn" href="https://wa.me/5551936198737?text=Ol%C3%A1%2C%20quero%20inscrever%20meu%20time%20no%20Torneio%203x3%20do%20BasketWorking" target="_blank" rel="noopener">Garantir vaga</a>
@@ -1783,8 +1859,8 @@ html.motion .mq__track{ animation:roll 30s linear infinite; }
   });
 
   /* ==================================================== contagem regressiva
-     Apito inicial: 27 de setembro de 2026, 9h, horário de Brasília. */
-  var TIP_OFF = new Date('2026-09-27T09:00:00-03:00').getTime();
+     Apito inicial: 18 de outubro de 2026, 9h, horário de Brasília. */
+  var TIP_OFF = new Date('2026-10-18T09:00:00-03:00').getTime();
   var cd = {
     d: document.getElementById('cdD'), h: document.getElementById('cdH'),
     m: document.getElementById('cdM'), s: document.getElementById('cdS')
